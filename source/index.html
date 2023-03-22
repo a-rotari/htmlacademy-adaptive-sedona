@@ -1,12 +1,123 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: {{projectTitle}}</title>
-  </head>
-  <body>
+<html class="page" lang="en">
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS. Адаптивная вёрстка и автоматизация</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <title>Sedona</title>
+</head>
 
-  </body>
+<body class="page__body">
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="header-logo">
+        <img src="./img/logotype-mobile.svg" alt="Sedona Logo">
+      </a>
+      <ul class="main-nav__items">
+        <li class="main-nav__item"><a href="#">Main page</a></li>
+        <li class="main-nav__item"><a href="./form.html">Review form</a></li>
+        <li class="main-nav__item"><a href="./catalog.html">Images and video</a></li>
+        <li class="main-nav__item"><a href="https://htmlacademy.ru">HTML Academy</a></li>
+      </ul>
+      <button class="main-nav__open-menu"><img src="./img/icon-menu.svg" alt="Open menu button"></button>
+      <button class="main-nav__close-menu"><img src="./img/icon-cross.svg" alt="Close menu button"></button>
+    </nav>
+  </header>
+  <main class="page-main">
+    <section class="intro">
+      <div class="intro__banner">
+        <h1 class="visually-hidden">Welcome to the gorgeous Sedona</h1>
+        <img src="./img/text-index.svg" alt="Because grand canyon sucks!">
+      </div>
+      <div class="intro__text">
+        <h2 class="intro__title">Sedona is a small town in Arizona that deserves much more!</h2>
+        <p class="intro__content">Let's look at 5 reasons why Sedona is way cooler than the Grand Canyon!</p>
+      </div>
+    </section>
+    <section class="highlights">
+      <ul class="highlights__items">
+        <li class="highlight__item--illustrated">
+          <h2 class="highlight__title">Real town</h2>
+          <p>- №1 -</p>
+          <p>Sedona is not just a tourist attraction, it's a real town bustling with life!</p>
+          <img src="./img/photo-city.jpeg" alt="Photo of the city streets">
+          <ul class="highlight__subitems">
+            <li class="highlight__subitem">
+              <img src="./img/icon-house.svg" alt="Icon of a house">
+              <h3 class="subitem__title">Accomodation</h3>
+              <p class="subitem__description">We recommend that you stay in a real motel. Everything's just like in a
+                movie!</p>
+            </li>
+            <li class="highlight__subitem">
+              <img src="./img/icon-gift.svg" alt="Icon of a gift">
+              <h3 class="subitem__title">Souvenirs</h3>
+              <p class="subitem__description">Not all are from a factory in China. Some are made locally!</p>
+            </li>
+            <li class="highlight__subitem">
+              <img src="./img/icon-burger.svg" alt="Icon of a burger">
+              <h3 class="subitem__title">Food</h3>
+              <p class="subitem__description">Always order the local burger. You won't be disappointed!</p>
+            </li>
+          </ul>
+        </li>
+        <li class="highlight__item--illustrated">
+          <h2 class="highlight__title">They've got the Devil's Bridge!</h2>
+          <p>- №2 -</p>
+          <p class="highlight__description">That's right, you can walk it. If you dare, that is!</p>
+          <img src="./img/photo-bridge.jpeg" alt="Photo of the devil's bridge">
+        </li>
+        <li class="highlight__item">
+          <h2 class="highlight__title">Compact size</h2>
+          <p>- №3 -</p>
+          <p class="highlight__description">All attractions are located close to each other</p>
+        </li>
+        <li class="highlight__item">
+          <h2 class="highlight__title">Beautiful vistas</h2>
+          <p>- №4 -</p>
+          <p class="highlight__description">The drive from Vegas to Sedona is a feast for the eyes!</p>
+        </li>
+        <li class="highlight__item">
+          <h2 class="highlight__title">Few tourists</h2>
+          <p>- №5 -</p>
+          <p class="highlight__description">Most of them go to see the crowded Grand Canyon</p>
+        </li>
+      </ul>
+    </section>
+    <section class="hotel-finder">
+      <h2 class="hotel-finder__title">Sounds interesting?</h2>
+      <p class="hotel-finder__description">Fill in the dates of your trip and we'll show you the best hotels available
+        in Sedona</p>
+      <a href="./form.html" class="main-button">Find a hotel</a>
+    </section>
+    <section class="map">
+      <h2 class="visually-hidden">Map of Sedona</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52385.13565773524!2d-111.83015786897113!3d34.85444381529441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2sSedona%2C%20AZ%2086336%2C%20USA!5e0!3m2!1sen!2sca!4v1679127759373!5m2!1sen!2sca"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <h2 class="visually-hidden">Find us on social media</h2>
+    <a class="hashtag-link" href="https://www.google.com/search?q=visit+sedona">#VISITSEDONA</a>
+    <ul class="social-networks">
+      <li class="social-networks__items">
+        <img src="./img/icon-twitter.svg" alt="Twitter">
+      </li>
+      <li class="social-networks__items">
+        <img src="./img/icon-facebook.svg" alt="Facebook">
+      </li>
+      <li class="social-networks__items">
+        <img src="./img/icon-youtube.svg" alt="Youtube">
+      </li>
+    </ul>
+    <div class="design-by">
+      <p class="design-by__text">Design by</p>
+      <a href="https://htmlacademy.org/">
+        <img src="./img/htmlacademy.svg" alt="HTML Academy" class="design-by__img">
+      </a>
+    </div>
+  </footer>
+</body>
+
 </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sedona: rating</title>
+</head>
+
+<body class="page__body">
+  <header class="page-header">
+    <nav class="main-nav">
+      <a class="header-logo">
+        <img src="./img/logotype-mobile.svg" alt="Sedona Logo">
+      </a>
+      <ul class="main-nav__items">
+        <li class="main-nav__item"><a href="./index.html">Main page</a></li>
+        <li class="main-nav__item"><a href="#">Review form</a></li>
+        <li class="main-nav__item"><a href="./catalog.html">Images and video</a></li>
+        <li class="main-nav__item"><a href="https://htmlacademy.ru">HTML Academy</a></li>
+      </ul>
+      <button class="main-nav__open-menu"><img src="./img/icon-menu.svg" alt="Open menu button"></button>
+      <button class="main-nav__close-menu"><img src="./img/icon-cross.svg" alt="Close menu button"></button>
+    </nav>
+  </header>
+  <main class="page-main">
+    <section class="intro">
+      <div class="intro__banner">
+        <h1 class="visually-hidden">Leave your reviews</h1>
+        <img src="./img/SEDONA.svg" alt="SEDONA">
+      </div>
+      <div class="intro__text">
+        <h2 class="intro__title">Leave a review!</h2>
+        <p class="intro__content">Help our hotels improve. Review them as well as the sights you've visited.</p>
+      </div>
+    </section>
+    <form class="review-form" action="https://echo.htmlacademy.ru" method="post">
+      <fieldset class="review-form__fieldset">
+        <legend>Introduce yourself:</legend>
+        <label for="first_name" class="review-form__label">First name*:</label>
+        <input type="text" class="review-form__field" name="review" id="first_name" placeholder="Jack">
+        <label for="middle_name" class="review-form__label">Middle name:</label>
+        <input type="text" class="review-form__field" name="review" id="middle_name" placeholder="Smith">
+        <label for="last_name" class="review-form__label">Last name*:</label>
+        <input type="text" class="review-form__field" name="review" id="last_name" placeholder="Menzies">
+      </fieldset>
+      <fieldset class="review-form__fieldset">
+        <label for="phone_number" class="review-form__label">
+          Contact phone*:
+          <input type="tel" class="review-form__field" id="phone_number" name="review" placeholder="Enter your phone number">
+          <img class="review-form__icon" src="./img/phone.svg" alt="">
+        </label>
+        <label for="email" class="review-form__label">
+          Enter your e-mail*:
+          <input type="email" class="review-form__field" id="email" name="review" placeholder="Enter your e-mail">
+          <img class="review-form__icon" src="./img/mail.svg" alt="">
+        </label>
+      </fieldset>
+      <fieldset class="review-form__fieldset">
+        <legend>Your general impression:</legend>
+        <label for="positive_impression" class="review-form__label">
+          <input type="radio" class="review-form__field" name="review" id="positive_impression" checked>
+          Generally positive
+        </label>
+        <label for="negative_impression" class="review-form__label">
+          <input type="radio" class="review-form__field" name="review" id="negative_impression">
+          Generally negative
+        </label>
+        <label for="unsure_impression" class="review-form__label">
+          <input type="radio" class="review-form__field" name="review" id="unsure_impression">
+          Not sure
+        </label>
+      </fieldset>
+      <fieldset class="review-form__fieldset">
+        <legend>Sights visited:</legend>
+        <label for="bridge_sights" class="review-form__label">
+          <input type="checkbox" class="review-form__field" name="review" id="bridge_sights" checked>
+          Devil's bridge
+        </label>
+        <label for="bell_sights" class="review-form__label">
+          <input type="checkbox" class="review-form__field" name="review" id="bell_sights" checked>
+          Bell rock
+        </label>
+        <label for="slide_sights" class="review-form__label">
+          <input type="checkbox" class="review-form__field" name="review" id="slide_sights" checked>
+          Slide rock state park
+        </label>
+        <label for="red_sights" class="review-form__label">
+          <input type="checkbox" class="review-form__field" name="review" id="red_sights">
+          Red rocks
+        </label>
+      </fieldset>
+      <fieldset class="review-form__fieldset">
+        <legend>Describe your impressions:</legend>
+        <textarea name="review" id="impressions" cols="30" rows="10" class="review-form__field"
+          placeholder="Describe what delighted you the most in as much detail as possible..."></textarea>
+      </fieldset>
+      <input type="submit" class="main-button" value="Submit review">
+    </form>
+  </main>
+  <footer class="page-footer">
+    <h2 class="visually-hidden">Find us on social media</h2>
+    <a class="hashtag-link" href="https://www.google.com/search?q=visit+sedona">#VISITSEDONA</a>
+    <ul class="social-networks">
+      <li class="social-networks__items">
+        <img src="./img/icon-twitter.svg" alt="Twitter">
+      </li>
+      <li class="social-networks__items">
+        <img src="./img/icon-facebook.svg" alt="Facebook">
+      </li>
+      <li class="social-networks__items">
+        <img src="./img/icon-youtube.svg" alt="Youtube">
+      </li>
+    </ul>
+    <div class="design-by">
+      <p class="design-by__text">Design by</p>
+      <a href="https://htmlacademy.org/">
+        <img src="./img/htmlacademy.svg" alt="HTML Academy" class="design-by__img">
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>
