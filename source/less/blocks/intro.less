@@ -1,0 +1,42 @@
+.intro {
+  text-align: center;
+
+  &__banner {
+    background-color: #e5f2fa;
+    background-image: url("../../img/back-mobile.jpg");
+    height: 389px;
+    position: relative;
+    z-index: -1;
+    margin-block-end: 32px;
+  }
+
+  &__image-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: unset;
+
+    &--trailing {
+      transform: translateY(100%);
+      left: 0;
+    }
+  }
+
+  &__image-text {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &__title {
+    margin-block-end: 26px;
+  }
+
+  &__text {
+    position: relative;
+    padding-inline: 18px;
+  }
+}

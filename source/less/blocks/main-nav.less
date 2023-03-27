@@ -1,0 +1,90 @@
+.main-nav {
+  padding-block-end: 56px;
+  position: relative;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    background-color: @background-highlight;
+    color: @text-highlight;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 700;
+    padding-block-start: 10px;
+    padding-block-end: 5px;
+    border-bottom: 2px solid rgba(1, 1, 1, 0.3);
+    z-index: 1;
+
+    &:hover {
+      background-color: @background-highlight-accent;
+    }
+
+    &:active {
+      background-color: @background-highlight-dim;
+      color: rgba(@text-highlight, 0.3);
+    }
+
+    &:last-child {
+      border: none;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__close-menu {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    z-index: 2;
+
+    svg {
+      fill: @text-highlight;
+    }
+  }
+
+  &__close-menu:hover {
+    svg {
+      fill: rgba(@text-highlight, 0.6);
+    }
+  }
+
+  &__close-menu:active {
+    svg {
+      fill: rgba(@text-highlight, 0.3);
+    }
+  }
+
+  &__open-menu {
+    position: absolute;
+    bottom: 17px;
+    right: 20px;
+
+    svg {
+      fill: @background-highlight;
+    }
+  }
+
+  &__open-menu:hover {
+    svg {
+      fill: rgba(@background-highlight, 0.6);
+    }
+  }
+
+  &__open-menu:active {
+    svg {
+      fill: rgba(@background-highlight, 0.3);
+    }
+  }
+
+  &__header-logo {
+    position: absolute;
+    width: 102px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
