@@ -53,6 +53,115 @@ p {
   color: @text-secondary;
 }
 
-.padding-wrapper() {
-  padding-inline: 18px;
+input {
+  border: none;
+  background-color: @surface;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  padding: 18px 21px 14px 21px;
+}
+
+input:hover {
+  background-color: @input-hover;
+}
+
+input[type="text"]:active,
+input[type="text"]:focus,
+input[type="email"]:active,
+input[type="email"]:focus,
+input[type="tel"]:active,
+input[type="tel"]:focus {
+  background-color: @background;
+  outline: 4px solid @input-hover;
+  outline-offset: -4px;
+}
+
+// input[type="radio"],
+// input[type="checkbox"] {
+//   outline: none;
+// }
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  background-color: @surface;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: @text-secondary;
+  width: 3em;
+  height: 3em;
+  border: none;
+  transform: translateY(-0.8em);
+  display: grid;
+  place-content: center;
+  outline: none;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  border-radius: 0.5em;
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  background-color: @input-hover;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: @text-secondary;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 2em;
+  height: 2em;
+  transform: scale(0);
+  background-color: @text-secondary;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  transform-origin: bottom-left;
+  clip-path: polygon(24% 45%, 46% 63%, 81% 18%, 89% 24%, 46% 79%, 16% 52%);
+}
+
+input[type="radio"]:active::before {
+  background-color: rgba(@text-secondary, 0.3);
+  transform: scale(1);
+}
+
+input[type="checkbox"]:active::before {
+  background-color: rgba(@text-secondary, 0.3);
+  transform: scale(1);
+  transform-origin: bottom-left;
+  clip-path: polygon(24% 45%, 46% 63%, 81% 18%, 89% 24%, 46% 79%, 16% 52%);
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: ~"max(2px, 0.15em)" solid @text-secondary;
+  outline-offset: ~"max(2px, 0.15em)";
+}
+
+textarea {
+  background-color: @surface;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  color: @text-primary;
+  padding: 18px 22px 24px 22px;
 }

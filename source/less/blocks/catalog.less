@@ -1,0 +1,42 @@
+.catalog {
+  &__item {
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid @border-primary;
+    margin-block-end: 23px;
+  }
+
+  &__photo {
+    width: 280px;
+    height: 280px;
+    align-self: center;
+    margin-block-end: 12px;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 24px;
+    align-self: flex-start;
+  }
+
+  &__author {
+    text-transform: none;
+    line-height: 24px;
+    margin-block-end: 10px;
+  }
+
+  &__likes {
+    display: flex;
+    margin-block-end: 15px;
+  }
+
+  &__like-button {
+    margin-inline-end: 14px;
+  }
+
+  &__like-numbers {
+    line-height: 24px;
+    font-weight: 700;
+  }
+}

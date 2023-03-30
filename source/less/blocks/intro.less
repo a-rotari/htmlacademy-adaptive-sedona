@@ -8,6 +8,11 @@
     position: relative;
     z-index: -1;
     margin-block-end: 32px;
+
+    &--short {
+      height: 154px;
+      background-position: left 80%;
+    }
   }
 
   &__image-triangle {
@@ -29,14 +34,28 @@
     left: 0;
     right: 0;
     margin: auto;
+
+    &--short {
+      top: 50px;
+    }
   }
 
   &__title {
     margin-block-end: 26px;
   }
 
+  &__content--short {
+    line-height: 24px;
+  }
+
   &__text {
     position: relative;
     padding-inline: 18px;
+
+    &--padded-border {
+      padding-block-end: 16px;
+      border-bottom: 1px solid @border-primary;
+      margin-block-end: 20px;
+    }
   }
 }

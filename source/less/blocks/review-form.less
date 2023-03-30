@@ -1,0 +1,80 @@
+.review-form {
+  padding-inline: 20px;
+  margin-block-end: 48px;
+
+  &__fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding-block-end: 30px;
+    margin-block-end: 20px;
+    border-bottom: 1px solid @border-primary;
+    display: grid;
+
+    &--name {
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 20px 14px;
+      align-items: center;
+    }
+
+    &--contacts {
+      grid-template-columns: minmax(0, 1fr) 58px;
+    }
+  }
+
+  &__fieldset:last-of-type {
+    padding-block-end: 0;
+    margin-block-end: 50px;
+    border: none;
+  }
+
+  &__legend {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-block-end: 18px;
+
+    &--impression {
+      margin-block-end: 37px;
+    }
+  }
+
+  &__label--contact {
+    margin-block-end: 8px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-inline-start: 20px;
+
+    &:not(:first-of-type) {
+      padding-block-start: 14px;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: @surface-dim;
+  }
+
+  &__label--impression,
+  &__label--visited {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    font-weight: 700;
+    text-transform: none;
+    display: grid;
+    grid-template-columns: 48px auto;
+    gap: 26px;
+    margin-block-end: 43px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__field--textarea {
+    height: 160px;
+    border: none;
+  }
+}
