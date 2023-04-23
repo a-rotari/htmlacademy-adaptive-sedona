@@ -2,9 +2,45 @@
   padding-block-end: 56px;
   position: relative;
 
+  @media (min-width: @tablet-width) {
+    padding-block-end: 0;
+    z-index: 1;
+  }
+
+  &__close-menu {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    z-index: 2;
+
+    svg {
+      fill: @text-highlight;
+    }
+
+    @media (min-width: @tablet-width) {
+      display: none;
+    }
+  }
+
   &__items {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: @tablet-width) {
+      height: 56px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) 120px repeat(2, 1fr);
+      gap: 20px;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__logo-spacer {
+    display: none;
+
+    @media (min-width: @tablet-width) {
+      display: block;
+    }
   }
 
   &__item {
@@ -20,29 +56,55 @@
     border-bottom: 2px solid rgba(1, 1, 1, 0.3);
     z-index: 1;
 
+    @media (min-width: @tablet-width) {
+      padding: 0;
+      align-items: center;
+      background-color: @background;
+      color: @text-primary;
+      border-bottom: none;
+      font-size: 14px;
+      line-height: 26px;
+    }
+
     &:hover {
       background-color: @background-highlight-accent;
+
+      @media (min-width: @tablet-width) {
+        background-color: unset;
+        color: @background-highlight;
+      }
     }
 
     &:active {
-      background-color: @background-highlight-dim;
       color: rgba(@text-highlight, 0.3);
+
+      @media (min-width: @tablet-width) {
+        background-color: unset;
+        color: rgba(@text-primary, 0.3);
+      }
     }
 
     &:last-child {
       border: none;
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      z-index: 2;
+
+      @media (min-width: @tablet-width) {
+        box-shadow: none;
+        z-index: auto;
+      }
     }
   }
 
-  &__close-menu {
-    position: absolute;
-    top: 17px;
-    right: 17px;
-    z-index: 2;
+  &__item--active {
+    @media (min-width: @tablet-width) {
+      color: @menu-active;
+    }
 
-    svg {
-      fill: @text-highlight;
+    &:hover {
+      @media (min-width: @tablet-width) {
+        color: @menu-active-hover;
+      }
     }
   }
 
@@ -62,6 +124,10 @@
     position: absolute;
     bottom: 17px;
     right: 20px;
+
+    @media (min-width: @tablet-width) {
+      display: none;
+    }
 
     svg {
       fill: @background-highlight;
@@ -86,5 +152,10 @@
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 1;
+
+    @media (min-width: @tablet-width) {
+      top: 0;
+    }
   }
 }

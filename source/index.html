@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple-icon-180x180.png">
@@ -25,8 +27,9 @@
         </svg>
       </button>
       <ul class="main-nav__items">
-        <li class="main-nav__item"><a href="#">Main page</a></li>
+        <li class="main-nav__item main-nav__item--active"><a href="#">Main page</a></li>
         <li class="main-nav__item"><a href="form.html">Leave a review</a></li>
+        <li class="main-nav__logo-spacer"></li>
         <li class="main-nav__item"><a href="catalog.html">Images and video</a></li>
         <li class="main-nav__item"><a href="https://htmlacademy.ru">HTML Academy</a></li>
       </ul>
@@ -52,7 +55,7 @@
         <img class="intro__image-triangle" src="img/intro-triangle.svg" alt="">
       </div>
       <div class="intro__text">
-        <h2 class="intro__title">Sedona is a small town in Arizona that deserves much more!</h2>
+        <h2 class="intro__title">Sedona is a small town in Arizona<br>that deserves much more!</h2>
         <p class="intro__content">Let's look at 5 reasons why Sedona is way cooler than the Grand Canyon!</p>
         <img src="img/intro-triangle-2.svg" alt="" class="intro__image-triangle intro__image-triangle--trailing">
       </div>
@@ -68,21 +71,24 @@
           <img class="highlights__image" src="img/photo-city.jpeg" alt="Photo of the city streets">
           <ul class="highlights__subitems">
             <li class="highlights__subitem">
+              <img src="img/icon-house.svg" alt="House Icon" class="highlights__subitem-image">
               <h3 class="highlights__subitem-title highlights__subitem-title--accomodation">Accomodation</h3>
               <p class="highlights__subitem-description">We recommend that you stay in a real motel. Everything's just like in a
                 movie!</p>
             </li>
             <li class="highlights__subitem">
+              <img src="img/icon-gift.svg" alt="Gift Item" class="highlights__subitem-image">
               <h3 class="highlights__subitem-title highlights__subitem-title--souvenirs">Souvenirs</h3>
               <p class="highlights__subitem-description">Not all are from a factory in China. Some are made locally!</p>
             </li>
             <li class="highlights__subitem">
+              <img src="img/icon-burger.svg" alt="Burger Icon" class="highlights__subitem-image">
               <h3 class="highlights__subitem-title highlights__subitem-title--food">Food</h3>
               <p class="highlights__subitem-description">Always order the local burger. You won't be disappointed!</p>
             </li>
           </ul>
         </li>
-        <li class="highlights__item highlights__item--illustrated">
+        <li class="highlights__item highlights__item--illustrated highlights__item--illustrated-reversed">
           <div class="highlights__textual-part">
             <h2 class="highlights__title">They've got the Devil's Bridge!</h2>
             <p class="highlights__number">&ndash; 2 &ndash;</p>
@@ -90,19 +96,19 @@
           </div>
           <img class="highlights__image" src="img/photo-bridge.jpeg" alt="Photo of the devil's bridge">
         </li>
-        <li class="highlights__item">
+        <li class="highlights__item highlights__item--simple">
           <h2 class="highlights__title">Compact size</h2>
           <p class="highlights__number">&ndash; 3 &ndash;</p>
           <p class="highlights__text" class="highlights__description">All attractions are located close to each other</p>
           <div class="highlights__separator"></div>
         </li>
-        <li class="highlights__item">
+        <li class="highlights__item highlights__item--simple">
           <h2 class="highlights__title">Beautiful vistas</h2>
           <p class="highlights__number">&ndash; 4 &ndash;</p>
           <p class="highlights__text" class="highlights__description">The drive from Vegas to Sedona is a feast for the eyes!</p>
           <div class="highlights__separator"></div>
         </li>
-        <li class="highlights__item">
+        <li class="highlights__item highlights__item--simple">
           <h2 class="highlights__title">Few tourists</h2>
           <p class="highlights__number">&ndash; 5 &ndash;</p>
           <p class="highlights__text" class="highlights__description">Most of them go to see the crowded Grand Canyon</p>
