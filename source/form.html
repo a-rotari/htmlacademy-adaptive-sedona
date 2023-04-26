@@ -69,27 +69,27 @@
         <label for="middle_name" class="review-form__label review-form__label--name">
           Middle name:
         </label>
-        <input type="text" class="review-form__field review-form__field--name" name="review" id="middle_name" placeholder="Smith">
+        <input type="text" class="review-form__field review-form__field--name" name="review" id="middle_name" placeholder="Menzies">
         <label for="last_name" class="review-form__label review-form__label--name">
           Last name*:
         </label>
-        <input type="text" class="review-form__field review-form__field--name" name="review" id="last_name" placeholder="Menzies">
+        <input type="text" class="review-form__field review-form__field--name" name="review" id="last_name" placeholder="Smith">
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--contacts">
-        <legend class="review-form__legend">Contact information:</legend>
+        <legend class="review-form__legend review-form__legend--contacts">Contact information:</legend>
         <label for="phone_number" class="review-form__label review-form__label--contact">
-          Contact phone*:
+          Phone*:
         </label>
-        <input type="tel" class="review-form__field" id="phone_number" name="review" placeholder="Your phone number">
-        <div class="review-form__icon-container"><img class="review-form__icon" src="img/phone.svg" alt=""></div>
-        <label for="email" class="review-form__label review-form__label--contact">
-          Enter your e-mail*:
+        <input type="tel" class="review-form__field review-form__field--contact" id="phone_number" name="review" placeholder="Your phone number">
+        <div class="review-form__icon-container"><img class="review-form__icon review-form__icon--contact" src="img/phone.svg" alt=""></div>
+        <label for="email" class="review-form__label review-form__label--contact review-form__label--padded">
+          E-mail*:
         </label>
         <input type="email" class="review-form__field" id="email" name="review" placeholder="Your e-mail">
         <div class="review-form__icon-container"><img class="review-form__icon" src="img/mail.svg" alt=""></div>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--impression">
-        <legend class="review-form__legend review-form__legend--impression">Your general impression:</legend>
+        <legend class="review-form__legend review-form__legend--impression">Your impression:</legend>
         <label for="positive_impression" class="review-form__label review-form__label--impression">
           <input type="radio" class="review-form__field review-form__field--impression" name="review" id="positive_impression" checked>
           Generally positive
@@ -104,7 +104,7 @@
         </label>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--visited">
-        <legend class="review-form__legend">Sights visited:</legend>
+        <legend class="review-form__legend review-form__legend--visited">Sights visited:</legend>
         <label for="bridge_sights" class="review-form__label review-form__label--visited">
           <input type="checkbox" class="review-form__field" name="review" id="bridge_sights" checked>
           Devil's bridge
@@ -122,12 +122,13 @@
           Red rocks
         </label>
       </fieldset>
-      <fieldset class="review-form__fieldset">
-        <legend class="review-form__legend">Describe your impressions:</legend>
+      <fieldset class="review-form__fieldset review-form__fieldset--details">
+        <legend class="review-form__legend review-form__legend--details">Describe your impressions:</legend>
         <textarea name="review" id="impressions" cols="30" rows="10" class="review-form__field review-form__field--textarea"
           placeholder="Describe what delighted you the most in as much detail as possible..."></textarea>
       </fieldset>
       <input type="submit" class="main-button" value="Submit review">
+      <span class="review-form__field-note">* — mandatory fields</span>
     </form>
   </main>
   <footer class="page-footer">

@@ -2,30 +2,104 @@
   padding-inline: 20px;
   margin-block-end: 48px;
 
+  @media (min-width: @tablet-width) {
+    padding-inline: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "impression name"
+      "contacts contacts"
+      "visited visited"
+      "details details";
+    margin-block-end: 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-inline: 128px;
+    margin-block-end: 66px;
+  }
+
   &__fieldset {
     border: none;
     margin: 0;
     padding: 0;
     padding-block-end: 30px;
     margin-block-end: 20px;
-    border-bottom: 1px solid @border-primary;
+    border-block-end: 1px solid @border-primary;
     display: grid;
+
+    @media (min-width: @tablet-width) {
+      border-block-end: none;
+    }
+
+    &--impression {
+      @media (min-width: @tablet-width) {
+        grid-area: impression;
+        border-inline-end: 1px solid @border-primary;
+        margin-block-end: 72px;
+      }
+    }
 
     &--name {
       grid-template-columns: 60px minmax(0, 1fr);
       gap: 20px 14px;
       align-items: center;
+
+      @media (min-width: @tablet-width) {
+        grid-area: name;
+        padding-inline-start: 58px;
+        margin-block-end: 72px;
+      }
     }
 
     &--contacts {
       grid-template-columns: minmax(0, 1fr) 58px;
+
+      @media (min-width: @tablet-width) {
+        grid-area: contacts;
+        border-block-start: 1px solid @border-primary;
+        padding-block-end: 0;
+        margin-block-end: 50px;
+      }
+
+      @media (min-width: @desktop-width) {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &--visited {
+      @media (min-width: @tablet-width) {
+        grid-area: visited;
+        border-block-start: 1px solid @border-primary;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-inline: 10%;
+        padding-block-end: 0;
+      }
+
+      @media (min-width: @desktop-width) {
+        padding-inline: 0;
+        justify-content: flex-start;
+      }
+    }
+
+    &--details {
+      @media (min-width: @tablet-width) {
+        grid-area: details;
+        border-block-start: 1px solid @border-primary;
+      }
     }
   }
 
   &__fieldset:last-of-type {
     padding-block-end: 0;
     margin-block-end: 50px;
-    border: none;
+
+    @media (max-width: @max-mobile-width) {
+      border: none;
+    }
   }
 
   &__legend {
@@ -34,8 +108,40 @@
     font-weight: 700;
     margin-block-end: 18px;
 
+    @media (min-width: @tablet-width) {
+      font-size: 21px;
+      margin-block-end: 52px;
+    }
+
     &--impression {
       margin-block-end: 37px;
+
+      @media (min-width: @tablet-width) {
+        margin-block-end: 72px;
+      }
+    }
+
+    &--contacts {
+      @media (min-width: @tablet-width) {
+        margin-block-end: 20px;
+        width: 500px;
+        padding-inline: 80px;
+      }
+    }
+
+    &--visited {
+      @media (min-width: @tablet-width) {
+        margin-block-end: 47px;
+        width: 500px;
+        padding-inline: 80px;
+      }
+    }
+
+    &--details {
+      @media (min-width: @tablet-width) {
+        width: 500px;
+        padding-inline: 80px;
+      }
     }
   }
 
@@ -45,8 +151,38 @@
     grid-column-end: 3;
     padding-inline-start: 20px;
 
+    @media (min-width: @desktop-width) {
+      padding-inline-end: 18px;
+      margin-block-end: 0;
+    }
+
     &:not(:first-of-type) {
       padding-block-start: 14px;
+
+      @media (min-width: @tablet-width) {
+        padding-block-start: 25px;
+      }
+
+      @media (min-width: @desktop-width) {
+        padding-block-start: 0;
+      }
+    }
+  }
+
+  &__label--visited {
+    @media (min-width: @tablet-width) {
+      flex-basis: 40%;
+      margin-inline: auto;
+    }
+
+    @media (min-width: @desktop-width) {
+      flex-basis: 20%;
+    }
+  }
+
+  &__label--padded {
+    @media (min-width: @desktop-width) {
+      margin-inline-start: auto;
     }
   }
 
@@ -55,6 +191,12 @@
     align-items: center;
     justify-content: center;
     background-color: @surface-dim;
+
+    @media (min-width: @desktop-width) {
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
+    }
   }
 
   &__label--impression,
@@ -69,12 +211,30 @@
     margin-block-end: 43px;
 
     &:last-of-type {
-      margin: 0;
+      @media (max-width: @max-mobile-width) {
+        margin: 0;
+      }
     }
   }
 
   &__field--textarea {
     height: 160px;
     border: none;
+  }
+
+  &__field--contact {
+    @media (min-width: @desktop-width) {
+      width: 257px;
+    }
+  }
+
+  &__field-note {
+    @media (max-width: @max-mobile-width) {
+      display: none;
+    }
+
+    display: inline-block;
+    margin-inline-start: auto;
+    align-self: center;
   }
 }
