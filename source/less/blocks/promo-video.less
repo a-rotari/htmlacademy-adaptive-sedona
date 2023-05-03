@@ -1,11 +1,27 @@
 .promo-video {
   margin-block-end: 50px;
 
+  @media (min-width: @tablet-width) {
+    margin-block-start: 58px;
+    padding-inline: 60px;
+    margin-block-end: 45px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-block-start: 63px;
+    margin-block-end: 85px;
+  }
+
   &__title {
-    font-size: 14px;
-    line-height: 24px;
+    line-height: 26px;
     padding-inline: 20px;
     margin-block-end: 26px;
+
+    @media (min-width: @tablet-width) {
+      font-size: 30px;
+      line-height: 30px;
+      padding-inline: 20%;
+    }
   }
 
   &__text {
@@ -13,5 +29,20 @@
     text-align: center;
     padding-inline: 20px;
     margin-block-end: 33px;
+
+    @media (min-width: @tablet-width) {
+      padding-inline: 20%;
+      margin-block-end: 62px;
+    }
+  }
+
+  &__video {
+    display: block;
+    width: 100%;
+
+    @media (min-width: @tablet-width) {
+      max-width: 800px;
+      margin-inline: auto;
+    }
   }
 }
