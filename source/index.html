@@ -16,7 +16,7 @@
 <body class="page__body">
   <header class="page-header">
     <nav class="main-nav">
-      <button class="main-nav__close-menu">
+      <button class="main-nav__close-menu main-nav--mobile-hidden" id="menu-close-button">
         <svg
           width="23"
           height="23"
@@ -26,7 +26,7 @@
           <path d="M22.2 2.8 19.4 0l-8.3 8.3L2.8 0 0 2.8l8.3 8.3L0 19.4l2.8 2.8 8.3-8.3 8.3 8.3 2.8-2.8-8.3-8.3 8.3-8.3Z"/>
         </svg>
       </button>
-      <ul class="main-nav__items">
+      <ul class="main-nav__items main-nav--mobile-hidden" id="nav-menu-items">
         <li class="main-nav__item main-nav__item--active"><a href="#">Main page</a></li>
         <li class="main-nav__item"><a href="form.html">Leave a review</a></li>
         <li class="main-nav__logo-spacer"></li>
@@ -36,7 +36,7 @@
       <a class="main-nav__header-logo">
         <img src="https://media.arotari.com/sedona/images/logotype-mobile.svg" alt="Sedona Logo">
       </a>
-      <button class="main-nav__open-menu">
+      <button class="main-nav__open-menu" id="menu-open-button">
         <svg
           width="23"
           height="22"
@@ -175,6 +175,6 @@
       </a>
     </div>
   </footer>
+  <script src="./js/menu-toggle.js"></script>
 </body>
-
 </html>
