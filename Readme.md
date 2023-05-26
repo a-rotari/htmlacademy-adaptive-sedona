@@ -10,3 +10,5 @@ Gulp and Node scripts, and the linting rules were provided by HTML Academy.
 
 The content of the project is a static website which includes several pages promoting the town of Sedona, which is located in the U.S. and is a popular tourist destination.
 The main feature of this portfolio project is adaptive design implemented through the use of media queries.
+
+**One more thing** this project is featuring is the use of ***AWS***. it ***serves video and images*** from ***Amazon S3 Bucket*** via ***Amazon Cloudfront***.
