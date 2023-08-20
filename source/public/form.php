@@ -1,3 +1,15 @@
+<?php
+require_once '../php/db.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  echo '<pre>';
+  print_r($_POST);
+  echo '</pre>';
+
+  require '../php/process_reviews_form.php';
+}
+?>
+
 <!DOCTYPE html>
 <html class="page" lang="en">
 
@@ -59,72 +71,72 @@
         <p class="intro__content intro__content--short">Help our hotels improve. Review them as well as the sights you've visited.</p>
       </div>
     </section>
-    <form class="review-form" action="https://echo.htmlacademy.ru" method="post">
+    <form class="review-form" action="/form.php" method="post">
       <fieldset class="review-form__fieldset review-form__fieldset--name">
         <legend class="review-form__legend">Introduce yourself:</legend>
         <label for="first_name" class="review-form__label review-form__label--name">
           First name*:
         </label>
-        <input type="text" class="review-form__field review-form__field--name" name="review" id="first_name" placeholder="Jack">
+        <input type="text" class="review-form__field review-form__field--name" name="first_name" id="first_name" placeholder="Jack" required>
         <label for="middle_name" class="review-form__label review-form__label--name">
           Middle name:
         </label>
-        <input type="text" class="review-form__field review-form__field--name" name="review" id="middle_name" placeholder="Menzies">
+        <input type="text" class="review-form__field review-form__field--name" name="middle_name" id="middle_name" placeholder="Menzies">
         <label for="last_name" class="review-form__label review-form__label--name">
           Last name*:
         </label>
-        <input type="text" class="review-form__field review-form__field--name" name="review" id="last_name" placeholder="Smith">
+        <input type="text" class="review-form__field review-form__field--name" name="last_name" id="last_name" placeholder="Smith" required>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--contacts">
         <legend class="review-form__legend review-form__legend--contacts">Contact information:</legend>
         <label for="phone_number" class="review-form__label review-form__label--contact">
           Phone*:
         </label>
-        <input type="tel" class="review-form__field review-form__field--contact" id="phone_number" name="review" placeholder="Your phone number">
+        <input type="tel" class="review-form__field review-form__field--contact" id="phone_number" name="phone_number" placeholder="Your phone number" required>
         <div class="review-form__icon-container"><img class="review-form__icon review-form__icon--contact" src="https://media.arotari.com/sedona/images/phone.svg" alt=""></div>
         <label for="email" class="review-form__label review-form__label--contact review-form__label--padded">
           E-mail*:
         </label>
-        <input type="email" class="review-form__field" id="email" name="review" placeholder="Your e-mail">
+        <input type="email" class="review-form__field" id="email" name="email" placeholder="Your e-mail" required>
         <div class="review-form__icon-container"><img class="review-form__icon" src="https://media.arotari.com/sedona/images/mail.svg" alt=""></div>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--impression">
         <legend class="review-form__legend review-form__legend--impression">Your impression:</legend>
         <label for="positive_impression" class="review-form__label review-form__label--impression">
-          <input type="radio" class="review-form__field review-form__field--impression" name="review" id="positive_impression" checked>
+          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="positive_impression" checked>
           Generally positive
         </label>
         <label for="negative_impression" class="review-form__label review-form__label--impression">
-          <input type="radio" class="review-form__field review-form__field--impression" name="review" id="negative_impression">
+          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="negative_impression">
           Generally negative
         </label>
         <label for="unsure_impression" class="review-form__label review-form__label--impression">
-          <input type="radio" class="review-form__field review-form__field--impression" name="review" id="unsure_impression">
+          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="unsure_impression">
           Not sure
         </label>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--visited">
         <legend class="review-form__legend review-form__legend--visited">Sights visited:</legend>
         <label for="bridge_sights" class="review-form__label review-form__label--visited">
-          <input type="checkbox" class="review-form__field" name="review" id="bridge_sights" checked>
+          <input type="checkbox" class="review-form__field" name="bridge_sights" id="bridge_sights" checked>
           Devil's bridge
         </label>
         <label for="bell_sights" class="review-form__label review-form__label--visited">
-          <input type="checkbox" class="review-form__field" name="review" id="bell_sights" checked>
+          <input type="checkbox" class="review-form__field" name="bell_sights" id="bell_sights" checked>
           Bell rock
         </label>
         <label for="slide_sights" class="review-form__label review-form__label--visited">
-          <input type="checkbox" class="review-form__field" name="review" id="slide_sights" checked>
+          <input type="checkbox" class="review-form__field" name="slide_sights" id="slide_sights" checked>
           Slide rock state park
         </label>
         <label for="red_sights" class="review-form__label review-form__label--visited">
-          <input type="checkbox" class="review-form__field" name="review" id="red_sights">
+          <input type="checkbox" class="review-form__field" name="red_sights" id="red_sights">
           Red rocks
         </label>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--details">
         <legend class="review-form__legend review-form__legend--details">Describe your impressions:</legend>
-        <textarea name="review" id="impressions" cols="30" rows="10" class="review-form__field review-form__field--textarea"
+        <textarea name="impressions" id="impressions" cols="30" rows="10" class="review-form__field review-form__field--textarea"
           placeholder="Describe what delighted you the most in as much detail as possible..."></textarea>
       </fieldset>
       <input type="submit" class="main-button" value="Submit review">

@@ -4,6 +4,7 @@ const sourcemap = require("gulp-sourcemaps");
 const less = require("gulp-less");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
+const connectPHP = require("gulp-connect-php");
 const sync = require("browser-sync").create();
 
 // Styles
@@ -17,35 +18,33 @@ const styles = () => {
       autoprefixer()
     ]))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("source/public/css"))
     .pipe(sync.stream());
 }
 
 exports.styles = styles;
 
-// Server
+// PHP Server
 
-const server = (done) => {
-  sync.init({
-    server: {
-      baseDir: 'source'
-    },
-    cors: true,
-    notify: false,
-    ui: false,
-  });
-  done();
-}
+const phpServerTask = (done) => {
+  connectPHP.server({
+    base: 'source/public',
+    port: 8000,
+    keepalive: true,
+  }, done);
+};
 
-exports.server = server;
+exports.phpServerTask = phpServerTask;
 
 // Watcher
 
 const watcher = () => {
   gulp.watch("source/less/**/*.less", gulp.series("styles"));
-  gulp.watch("source/*.html").on("change", sync.reload);
+  gulp.watch("source/public/*.php").on("change", sync.reload);
 }
 
+exports.watcher = watcher;
+
 exports.default = gulp.series(
-  styles, server, watcher
+  styles, phpServerTask, watcher
 );

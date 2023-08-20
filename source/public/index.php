@@ -28,9 +28,9 @@
       </button>
       <ul class="main-nav__items main-nav--mobile-hidden" id="nav-menu-items">
         <li class="main-nav__item main-nav__item--active"><a href="#">Main page</a></li>
-        <li class="main-nav__item"><a href="form.html">Leave a review</a></li>
+        <li class="main-nav__item"><a href="/form.php">Leave a review</a></li>
         <li class="main-nav__logo-spacer"></li>
-        <li class="main-nav__item"><a href="catalog.html">Images and video</a></li>
+        <li class="main-nav__item"><a href="/catalog.php">Images and video</a></li>
         <li class="main-nav__item"><a href="https://arotari.com">Andrei's Homepage</a></li>
       </ul>
       <a class="main-nav__header-logo">
@@ -119,7 +119,7 @@
       <h2 class="hotel-finder__title">Sounds interesting?</h2>
       <p class="hotel-finder__description">Fill in the dates of your trip and we'll show you the best hotels available
         in Sedona</p>
-      <a href="form.html" class="main-button hotel-finder__link">Find a hotel</a>
+      <a href="/form.php" class="main-button hotel-finder__link">Find a hotel</a>
     </section>
     <section class="map">
       <h2 class="visually-hidden">Map of Sedona</h2>
