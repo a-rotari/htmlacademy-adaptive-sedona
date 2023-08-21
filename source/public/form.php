@@ -103,15 +103,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <fieldset class="review-form__fieldset review-form__fieldset--impression">
         <legend class="review-form__legend review-form__legend--impression">Your impression:</legend>
         <label for="positive_impression" class="review-form__label review-form__label--impression">
-          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="positive_impression" checked>
+          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="positive_impression" value="positive" checked>
           Generally positive
         </label>
         <label for="negative_impression" class="review-form__label review-form__label--impression">
-          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="negative_impression">
+          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="negative_impression" value="negative">
           Generally negative
         </label>
         <label for="unsure_impression" class="review-form__label review-form__label--impression">
-          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="unsure_impression">
+          <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="unsure_impression" value="unsure">
           Not sure
         </label>
       </fieldset>

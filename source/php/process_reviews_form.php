@@ -24,22 +24,47 @@ foreach ($fieldsToSanitize as $field) {
     }
 }
 
-print_r($sanitizedData);
+$fieldBindings = [
+    ['name' => 'first_name', 'type' => PDO::PARAM_STR, 'max_length' => 255],
+    ['name' => 'middle_name', 'type' => PDO::PARAM_STR, 'max_length' => 255],
+    ['name' => 'last_name', 'type' => PDO::PARAM_STR, 'max_length' => 255],
+    ['name' => 'email', 'type' => PDO::PARAM_STR, 'max_length' => 255],
+    ['name' => 'phone_number', 'type' => PDO::PARAM_STR, 'max_length' => 20],
+];
+$sql = 'INSERT INTO users(first_name, middle_name, last_name, email, phone) VALUES(?,?,?,?,?)';
+$stmt = $pdo->prepare($sql);
 
-$stmt = $pdo->prepare('INSERT INTO users(first_name, middle_name, last_name, email, phone) VALUES(?,?,?,?,?)');
-$stmt->bindParam(1, $first_name, PDO::PARAM_STR, 255);
-$stmt->bindParam(2, $middle_name, PDO::PARAM_STR, 255);
-$stmt->bindParam(3, $last_name, PDO::PARAM_STR, 255);
-$stmt->bindParam(4, $email, PDO::PARAM_STR, 255);
-$stmt->bindParam(5, $phone, PDO::PARAM_STR, 20);
+// Bind parameters and execute for users insertion
+foreach ($fieldBindings as $index => $binding) {
+    $stmt->bindParam($index + 1, $sanitizedData[$binding['name']], $binding['type'], $binding['max_length']);
+}
 
-$first_name = $sanitizedData['first_name'] ?? '';
-$middle_name = $sanitizedData['middle_name'] ?? '';
-$last_name = $sanitizedData['last_name'] ?? '';
-$email = $sanitizedData['email'] ?? '';
-$phone = $sanitizedData['phone_number'] ?? '';
+$stmt->execute();
+$newUserId = $pdo->lastInsertId();
 
+$sql = 'INSERT INTO reviews(impression, details) VALUES(?,?)';
+$fieldBindings = [
+    ['name' => 'impression', 'type' => PDO::PARAM_STR, 'max_length' => 255],
+    ['name' => 'impressions', 'type' => PDO::PARAM_LOB]
+];
+$stmt = $pdo->prepare($sql);
 
-$stmt->execute([$first_name, $middle_name, $last_name, $email, $phone]);
+// Bind parameters and execute for reviews insertion
+foreach ($fieldBindings as $index => $binding) {
+    if ($binding['type'] !== PDO::PARAM_LOB) {
+        $stmt->bindParam($index + 1, $sanitizedData[$binding['name']], $binding['type'], $binding['max_length']);
+    } else {
+        $stmt->bindParam($index + 1, $sanitizedData[$binding['name']], $binding['type']);
+    }
+}
+$stmt->execute();
+$newReviewId = $pdo->lastInsertId();
 
-printf("%d Row inserted.\n", $stmt->rowCount());
+// Build the SQL query and field bindings
+$userReviewSql = 'INSERT INTO users_reviews (user_id, review_id) VALUES (?, ?)';
+$userReviewStmt = $pdo->prepare($userReviewSql);
+
+$userReviewStmt->bindValue(1, $newUserId);
+$userReviewStmt->bindValue(2, $newReviewId);
+
+$userReviewStmt->execute();

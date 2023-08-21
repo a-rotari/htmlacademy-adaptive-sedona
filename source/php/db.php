@@ -56,7 +56,7 @@ $checkUsersReviewsThroughTable = "CREATE TABLE users_reviews (
     FOREIGN KEY (review_id) REFERENCES reviews(id)
 )";
 
-$checkSightsReviewsThroughTable = "CREATE TABLE sights_users (
+$checkSightsReviewsThroughTable = "CREATE TABLE sights_reviews (
     sight_id INT,
     review_id INT,
     PRIMARY KEY (sight_id, review_id),
@@ -78,7 +78,9 @@ function checkAndCreateTable($pdo, $tableName, $createTableQuery) {
 $checkedTables = [
     'reviews' => $checkReviewsTable,
     'users' => $checkUsersTable,
-    'sights' => $checkSightsTable
+    'sights' => $checkSightsTable,
+    'users_reviews' => $checkUsersReviewsThroughTable,
+    'sights_reviews' => $checkSightsReviewsThroughTable
 ];
 
 foreach ($checkedTables as $tableName => $queryString) {
