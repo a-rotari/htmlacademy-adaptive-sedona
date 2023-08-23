@@ -660,7 +660,7 @@ textarea {
     display: none;
   }
 }
-.hotel-finder {
+.reviews {
   -webkit-padding-before: 35px;
           padding-block-start: 35px;
   -webkit-padding-after: 50px;
@@ -668,47 +668,79 @@ textarea {
   text-align: justify;
 }
 @media (min-width: 768px) {
-  .hotel-finder {
+  .reviews {
     -webkit-padding-before: 58px;
             padding-block-start: 58px;
     -webkit-padding-after: 58px;
             padding-block-end: 58px;
   }
 }
-.hotel-finder__title {
+.reviews__title {
   font-size: 21px;
   -webkit-margin-after: 21px;
           margin-block-end: 21px;
   padding-inline: 30px;
 }
 @media (min-width: 768px) {
-  .hotel-finder__title {
+  .reviews__title {
     font-size: 30px;
     line-height: 30px;
   }
 }
-.hotel-finder__description {
+.reviews__container {
+  border: 3px solid #81B3D2;
+  border-radius: 20px;
+  padding: 10px;
+  padding-inline: 20px;
+  margin-block: 48px;
+}
+@media (min-width: 768px) {
+  .reviews__container {
+    display: grid;
+    width: 80%;
+    margin-inline: auto;
+    grid-template-areas: "author impression" "sights sights" "details details";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    /* Adjust as needed */
+    gap: 10px;
+    /* Adjust gap between grid items */
+  }
+}
+.reviews__description {
   line-height: 24px;
   -webkit-margin-after: 27px;
           margin-block-end: 27px;
   padding-inline: 30px;
 }
 @media (min-width: 768px) {
-  .hotel-finder__description {
+  .reviews__description {
     -webkit-margin-after: 37px;
             margin-block-end: 37px;
     padding-inline: 160px;
     text-align: center;
   }
 }
-.hotel-finder__link {
+.reviews__content--author {
+  grid-area: author;
+}
+.reviews__content--impression {
+  grid-area: impression;
+}
+.reviews__content--sights {
+  grid-area: sights;
+}
+.reviews__content--details {
+  grid-area: details;
+}
+.reviews__link {
   width: 90%;
   margin: auto;
   font-size: 21px;
   line-height: 26px;
 }
 @media (min-width: 768px) {
-  .hotel-finder__link {
+  .reviews__link {
     width: 60%;
   }
 }
