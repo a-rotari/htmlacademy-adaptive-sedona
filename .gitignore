@@ -12,4 +12,5 @@ source/css/*.css
 source/css/*.map
 Thumbs.db
 **/.env
-/source/vendor/
+source/vendor/
+source/public/css/

@@ -24,11 +24,20 @@
     border-radius: 20px;
     padding: 10px;
     padding-inline: 20px;
+    margin-inline: 20px;
     margin-block: 48px;
+
+    @media (min-width: @mobile-medium-width) {
+      margin-inline: 40px;
+    }
+
+    @media (min-width: @mobile-large-width) {
+      margin-inline: 60px;
+    }
 
     @media (min-width: @tablet-width) {
       display: grid;
-      width: 80%;
+      width: 480px;
       margin-inline: auto;
       grid-template-areas:
           "author impression"
