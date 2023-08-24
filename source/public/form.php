@@ -2,10 +2,6 @@
 require_once '../php/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  echo '<pre>';
-  print_r($_POST);
-  echo '</pre>';
-
   require '../php/process_reviews_form.php';
 }
 ?>
@@ -39,10 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </svg>
       </button>
       <ul class="main-nav__items main-nav--mobile-hidden" id="nav-menu-items">
-        <li class="main-nav__item"><a href="index.html">Main page</a></li>
+        <li class="main-nav__item"><a href="index.php">Main page</a></li>
         <li class="main-nav__item main-nav__item--active"><a href="#">Leave a review</a></li>
         <li class="main-nav__logo-spacer"></li>
-        <li class="main-nav__item"><a href="catalog.html">Images and video</a></li>
+        <li class="main-nav__item"><a href="catalog.php">Images and video</a></li>
         <li class="main-nav__item"><a href="https://arotari.com">Andrei's Homepage</a></li>
       </ul>
       <a class="main-nav__header-logo">

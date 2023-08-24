@@ -115,11 +115,10 @@
         </li>
       </ul>
     </section>
-    <section class="hotel-finder">
-      <h2 class="hotel-finder__title">Sounds interesting?</h2>
-      <p class="hotel-finder__description">Fill in the dates of your trip and we'll show you the best hotels available
-        in Sedona</p>
-      <a href="/form.php" class="main-button hotel-finder__link">Find a hotel</a>
+    <section class="reviews">
+      <h2 class="reviews__title">Sounds interesting?</h2>
+      <p class="reviews__description">Click on the button below to read reviews left by real people</p>
+      <a href="/reviews.php" class="main-button reviews__link">See reviews</a>
     </section>
     <section class="map">
       <h2 class="visually-hidden">Map of Sedona</h2>

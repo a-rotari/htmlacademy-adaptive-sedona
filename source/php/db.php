@@ -2,7 +2,6 @@
 require '../vendor/autoload.php';
 
 define('APPROOT', dirname(dirname(__FILE__)));
-print_r(APPROOT);
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $loadedVars = $dotenv->load();
@@ -52,16 +51,16 @@ $checkUsersReviewsThroughTable = "CREATE TABLE users_reviews (
     user_id INT,
     review_id INT,
     PRIMARY KEY (user_id, review_id),
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (review_id) REFERENCES reviews(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (review_id) REFERENCES reviews(id) ON DELETE CASCADE
 )";
 
 $checkSightsReviewsThroughTable = "CREATE TABLE sights_reviews (
     sight_id INT,
     review_id INT,
     PRIMARY KEY (sight_id, review_id),
-    FOREIGN KEY (sight_id) REFERENCES sights(id),
-    FOREIGN KEY (review_id) REFERENCES reviews(id)
+    FOREIGN KEY (sight_id) REFERENCES sights(id) ON DELETE CASCADE,
+    FOREIGN KEY (review_id) REFERENCES reviews(id) ON DELETE CASCADE
 )";
 
 function checkAndCreateTable($pdo, $tableName, $createTableQuery) {
@@ -72,6 +71,25 @@ function checkAndCreateTable($pdo, $tableName, $createTableQuery) {
         return True;
     } else {
         return False;
+    }
+}
+
+function populateSightsTable($pdo, $sightsList) {
+    $sql = "SELECT name FROM sights";
+    $stmt = $pdo->query($sql);
+    $stmt->execute();
+
+    $sights = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    $missingSights = array_diff($sightsList, $sights);
+    if ($missingSights) {
+        $placeholders = implode(', ', array_fill(0, count($missingSights), '(?)'));
+        $sql = "INSERT INTO sights (name) VALUES $placeholders";
+        $stmt = $pdo->prepare($sql);
+        $index = 1;
+        foreach ($missingSights as $value) {
+            $stmt->bindValue($index++, $value, PDO::PARAM_STR);
+        }
+        $stmt->execute();
     }
 }
 
@@ -86,6 +104,15 @@ $checkedTables = [
 foreach ($checkedTables as $tableName => $queryString) {
     $isTableCreated = checkAndCreateTable($pdo, $tableName, $queryString);
     $message = $isTableCreated ? "$tableName was created" : "$tableName already exists";
-    echo $message;
+    // echo $message;
 }
+
+$sightsList = [
+    'bridge_sights',
+    'bell_sights',
+    'slide_sights',
+    'red_sights'
+];
+
+populateSightsTable($pdo, $sightsList);
 ?>

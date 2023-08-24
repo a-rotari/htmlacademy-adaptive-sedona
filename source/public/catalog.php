@@ -23,8 +23,8 @@
         </svg>
       </button>
       <ul class="main-nav__items main-nav--mobile-hidden" id="nav-menu-items">
-        <li class="main-nav__item"><a href="index.html">Main page</a></li>
-        <li class="main-nav__item"><a href="form.html">Leave a review</a></li>
+        <li class="main-nav__item"><a href="index.php">Main page</a></li>
+        <li class="main-nav__item"><a href="form.php">Leave a review</a></li>
         <li class="main-nav__logo-spacer"></li>
         <li class="main-nav__item main-nav__item--active"><a href="#">Images and video</a></li>
         <li class="main-nav__item"><a href="https://arotari.com">Andrei's Homepage</a></li>
