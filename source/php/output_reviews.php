@@ -1,4 +1,10 @@
 <?php
+$sightHumanReadableNames = [
+    "bridge_sights" => "Devil's Bridge",
+    "bell_sights" => "Bell Rock",
+    "slide_sights" => "Slide Rock State Park",
+    "red_sights" => "Red Rocks",
+];
 
 $sql = "SELECT u.first_name, r.impression, r.details, r.id
         FROM reviews r JOIN users_reviews ur ON r.id = ur.review_id JOIN users u ON ur.user_id = u.id";
@@ -23,7 +29,7 @@ foreach ($rows as $row) {
     $sights = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $sightNames = [];
     foreach ($sights as $sight) {
-        $sightNames[] = $sight['name'];
+        $sightNames[] = $sightHumanReadableNames[$sight['name']];
     }
     $row['sights'] = $sightNames;
     $context[] = $row;
