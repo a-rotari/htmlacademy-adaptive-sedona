@@ -44,6 +44,7 @@
       grid-template-columns: 60px minmax(0, 1fr);
       gap: 20px 14px;
       align-items: center;
+      padding: 1px;
 
       @media (min-width: @tablet-width) {
         grid-area: name;
@@ -107,6 +108,7 @@
     font-size: 18px;
     font-weight: 700;
     margin-block-end: 18px;
+    grid-column: ~"1 / -1";
 
     @media (min-width: @tablet-width) {
       font-size: 21px;

@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
     <form class="review-form" action="/form.php" method="post">
       <fieldset class="review-form__fieldset review-form__fieldset--name">
-        <legend class="review-form__legend">Introduce yourself:</legend>
+        <h3 class="review-form__legend">Introduce yourself:</h3>
         <label for="first_name" class="review-form__label review-form__label--name">
           First name*:
         </label>
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" class="review-form__field review-form__field--name" name="last_name" id="last_name" placeholder="Smith" required>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--contacts">
-        <legend class="review-form__legend review-form__legend--contacts">Contact information:</legend>
+        <h3 class="review-form__legend review-form__legend--contacts">Contact information:</h3>
         <label for="phone_number" class="review-form__label review-form__label--contact">
           Phone*:
         </label>
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="review-form__icon-container"><img class="review-form__icon" src="https://media.arotari.com/sedona/images/mail.svg" alt=""></div>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--impression">
-        <legend class="review-form__legend review-form__legend--impression">Your impression:</legend>
+        <h3 class="review-form__legend review-form__legend--impression">Your impression:</h3>
         <label for="positive_impression" class="review-form__label review-form__label--impression">
           <input type="radio" class="review-form__field review-form__field--impression" name="impression" id="positive_impression" value="positive" checked>
           Generally positive
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </label>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--visited">
-        <legend class="review-form__legend review-form__legend--visited">Sights visited:</legend>
+        <h3 class="review-form__legend review-form__legend--visited">Sights visited:</h3>
         <label for="bridge_sights" class="review-form__label review-form__label--visited">
           <input type="checkbox" class="review-form__field" name="bridge_sights" id="bridge_sights" checked>
           Devil's bridge
@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </label>
       </fieldset>
       <fieldset class="review-form__fieldset review-form__fieldset--details">
-        <legend class="review-form__legend review-form__legend--details">Describe your impressions:</legend>
+        <h3 class="review-form__legend review-form__legend--details">Describe your impressions:</h3>
         <textarea name="impressions" id="impressions" cols="30" rows="10" class="review-form__field review-form__field--textarea"
           placeholder="Describe what delighted you the most in as much detail as possible..."></textarea>
       </fieldset>
